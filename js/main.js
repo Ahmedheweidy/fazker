@@ -70,11 +70,38 @@ countdown("myButton28");
 countdown("myButton29");
 countdown("myButton30");
 countdown("myButton31");
+countdown("myButton32");
+countdown("myButton33");
+countdown("myButton34");
+countdown("myButton35");
+countdown("myButton36");
+countdown("myButton37");
+countdown("myButton38");
+countdown("myButton39");
+countdown("myButton40");
+countdown("myButton41");
+countdown("myButton42");
+countdown("myButton43");
+countdown("myButton44");
+countdown("myButton45");
+countdown("myButton46");
+countdown("myButton47");
+countdown("myButton48");
+countdown("myButton49");
+countdown("myButton50");
+countdown("myButton51");
+countdown("myButton52");
+countdown("myButton53");
+countdown("myButton54");
+countdown("myButton55");
+countdown("myButton56");
+countdown("myButton57");
+
 
 
 var div = document.querySelector('div');
 div.addEventListener('click', function() {
-  div.classList.toggle('active');
+    div.classList.toggle('active');
 });
 
 
@@ -82,7 +109,63 @@ div.addEventListener('click', function() {
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
+}
 
 
 
+
+
+
+function goToPage1() {
+    document.getElementById("page1").classList.add("active");
+    document.getElementById("page2").classList.remove("active");
+    document.getElementById("page3").classList.remove("active");
+    document.getElementById("page4").classList.remove("active");
+    document.getElementById("page5").classList.remove("active");
+    document.getElementById("page6").classList.remove("active");
+}
+
+function goToPage2() {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.add("active");
+    document.getElementById("page3").classList.remove("active");
+    document.getElementById("page4").classList.remove("active");
+    document.getElementById("page5").classList.remove("active");
+    document.getElementById("page6").classList.remove("active");
+}
+
+function goToPage3() {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.remove("active");
+    document.getElementById("page3").classList.add("active");
+    document.getElementById("page4").classList.remove("active");
+    document.getElementById("page5").classList.remove("active");
+    document.getElementById("page6").classList.remove("active");
+}
+
+function goToPage4() {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.remove("active");
+    document.getElementById("page3").classList.remove("active");
+    document.getElementById("page4").classList.add("active");
+    document.getElementById("page5").classList.remove("active");
+    document.getElementById("page6").classList.remove("active");
+}
+
+function goToPage5() {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.remove("active");
+    document.getElementById("page3").classList.remove("active");
+    document.getElementById("page4").classList.remove("active");
+    document.getElementById("page5").classList.add("active");
+    document.getElementById("page6").classList.remove("active");
+}
+
+function goToPage6() {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.remove("active");
+    document.getElementById("page3").classList.remove("active");
+    document.getElementById("page4").classList.remove("active");
+    document.getElementById("page5").classList.remove("active");
+    document.getElementById("page6").classList.add("active");
+}
