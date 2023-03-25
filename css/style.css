@@ -21,34 +21,6 @@ background-color: #cdcfc0;
     text-shadow: 2px 2px#7a7a7a;
 }
 
-#myButton33 {
-    background-color: #4CAF50;
-    /* لون الخلفية */
-    border: none;
-    /* إزالة الحدود */
-    color: white;
-    /* لون النص */
-    padding: 15px 32px;
-    /* الابعاد الداخلية */
-    text-align: center;
-    /* توسيط النص */
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    /* حجم النص */
-    margin: 4px 2px;
-    /* المسافات بين الزر */
-    cursor: pointer;
-    /* تحويل المؤشر إلى يد عند التحويم */
-}
-
-
-
-
-
-
-
-
 
 
 button {
