@@ -211,3 +211,13 @@ function showTable() {
          document.getElementById('tableDiv').style.display = "block"; // عرض الجدول
     }
 }
+
+
+const counter = document.querySelector('.counter25');
+const incrementBtn = document.querySelector('.increment');
+let count = 0;
+
+incrementBtn.addEventListener('click', () => {
+  count++;
+  counter.querySelector('h2').textContent = count;
+});
