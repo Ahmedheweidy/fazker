@@ -195,3 +195,19 @@ function goToPage6() {
     document.getElementById("page5").classList.remove("active");
     document.getElementById("page6").classList.add("active");
 }
+
+
+
+function showTable() {
+    document.getElementById('tableDiv').style.display = "block"; // تعيين حالة العرض للجدول كـ "block"
+    localStorage.setItem('show', 'true'); // تخزين حالة العرض في localStorage
+ }
+
+ 
+
+ window.onload = function() {
+    var show = localStorage.getItem('show'); // جلب حالة العرض من localStorage
+    if(show === 'true'){
+         document.getElementById('tableDiv').style.display = "block"; // عرض الجدول
+    }
+}
