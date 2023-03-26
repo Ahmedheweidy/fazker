@@ -185,7 +185,24 @@ button {
 
 
 
-
+  .saved-counters {
+    margin-top: 30px;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background-color: #ddd;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
 
 
 

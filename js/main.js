@@ -201,23 +201,80 @@ function goToPage6() {
 function showTable() {
     document.getElementById('tableDiv').style.display = "block"; // تعيين حالة العرض للجدول كـ "block"
     localStorage.setItem('show', 'true'); // تخزين حالة العرض في localStorage
- }
+}
 
- 
 
- window.onload = function() {
+
+window.onload = function () {
     var show = localStorage.getItem('show'); // جلب حالة العرض من localStorage
-    if(show === 'true'){
-         document.getElementById('tableDiv').style.display = "block"; // عرض الجدول
+    if (show === 'true') {
+        document.getElementById('tableDiv').style.display = "block"; // عرض الجدول
     }
 }
 
 
 const counter = document.querySelector('.counter25');
 const incrementBtn = document.querySelector('.increment');
+const saveBtn = document.querySelector('#save');
+const resumeBtn = document.querySelector('#resume');
+const clearBtn = document.querySelector('#clear');
+const savedCountersBody = document.querySelector('#saved-counters-body');
 let count = 0;
 
+
+// عند تحميل الصفحة، قم بإظهار العداد الذي تم حفظه إذا كان موجودًا
+if (localStorage.getItem('count')) {
+    count = parseInt(localStorage.getItem('count'));
+    counter.querySelector('h2').textContent = count;
+}
+
+
+// عند الضغط على الزر، زد العداد وعرضه في الصفحة
 incrementBtn.addEventListener('click', () => {
-  count++;
-  counter.querySelector('h2').textContent = count;
+    count++;
+    counter.querySelector('h2').textContent = count;
 });
+
+
+// عند الضغط على زر الحفظ، قم بحفظ العداد في localStorage وإضافته إلى الجدول
+saveBtn.addEventListener('click', () => {
+    localStorage.setItem('count', count);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+    <td>${savedCountersBody.children.length + 1}</td>
+    <td>${count}</td>
+    <td><button class="delete" data-row-id="${savedCountersBody.children.length}">مسح</button></td>
+  `;
+    savedCountersBody.appendChild(tr);
+});
+
+// عند الضغط على زر الاستئناف، استعادة قيمة العداد من الذاكرة المحلية وإظهاره في الصفحة
+resumeBtn.addEventListener('click', () => {
+    if (localStorage.getItem('count')) {
+        count = parseInt(localStorage.getItem('count'));
+        counter.querySelector('h2').textContent = count;
+    }
+});
+
+
+
+// عند الضغط على زر المسح، حذف الصف المحدد من الجدول ومن الذاكرة المحلية
+savedCountersBody.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete')) {
+        const rowId = parseInt(event.target.dataset.rowId);
+        const rowToDelete = savedCountersBody.children[rowId];
+        savedCountersBody.removeChild(rowToDelete);
+        localStorage.removeItem(`counter${rowId}`);
+    }
+});
+
+// عند الضغط على زر المحو، قم بمحو جميع العدادات المحفوظة وتفريغ الجدول
+clearBtn.addEventListener('click', () => {
+    localStorage.removeItem('count');
+    localStorage.removeItem('savedCounters');
+    savedCountersBody.innerHTML = '';
+});
+
+
+
+
